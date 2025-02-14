@@ -37,8 +37,7 @@ export default function ReadyComponent({ onBookAnotherTicket }) {
 
   return (
     <div className="rounded-3xl px-4 sm:px-6 md:px-12 py-6 border border-[#0E464F] shadow-lg w-full max-w-full text-white">
-      <div className="rounded-lg shadow flex-1 mt-6"
-      ref={ticketRef}>
+      <div className="rounded-lg shadow flex-1 mt-6" ref={ticketRef}>
         <div className="flex justify-between">
           <h3 className="font-bold text-white font-jeju text-[1rem] md:text-[2rem]">Ready</h3>
           <p className="text-sm text-gray-300 font-roboto text-[1rem] mt-2">Step 3/3</p>
@@ -47,43 +46,43 @@ export default function ReadyComponent({ onBookAnotherTicket }) {
           <div className="bg-[#24A0B5] h-1 rounded-full" style={{ width: "60%" }}></div>
         </div>
       </div>
-      <div className='text-center pt-8 pb-12'>
-        <h3 className='md:text-[2rem] text-[1rem] font-bold '>Your Ticket is Booked!</h3>
-        <p className='md:text-[1rem] text-[0.65rem] pt-5'>Check your email for a copy or you can download</p>
+      <div className="text-center pt-8 pb-12">
+        <h3 className="md:text-[2rem] text-[1rem] font-bold ">Your Ticket is Booked!</h3>
+        <p className="md:text-[1rem] text-[0.65rem] pt-5">Check your email for a copy or you can download</p>
       </div>
       <div className="relative mx-auto max-w-sm ">
         <div className="relative flex flex-col max-h-auto ">
-          <Image src={ticket} alt="Background Ticket" className="w-full object-cover" />
-          <div className='absolute border border-[#24A0B5]  shadow-lg w-[90%] max-h-[400px]  sm:max-h-[500px] 
-          mx-auto inset-x-4 mt-5 sm:mt-16 md:mt-16 text-white rounded-xl p-3'>
+          <Image src={ticket || "/placeholder.svg"} alt="Background Ticket" className="w-full object-cover" />
+          <div
+            className="absolute border border-[#24A0B5] shadow-lg w-[90%] max-h-[400px] sm:max-h-[500px] 
+           overflow-y-scroll mx-auto inset-x-4 mt-5 sm:mt-16 md:mt-16 text-white rounded-xl p-3 hide-scrollbar"
+          >
             <div className="w-full text-center">
               <h2 className="md:text-[40px] font-roadRage">Techember Fest '25</h2>
               <p className="mt-2 text-[1rem] font-roboto text-gray-300">📍 04 Rumens road, Ikoyi, Lagos </p>
-              <p className=" text-[1rem] font-roboto text-gray-300">
-                📅 March 15, 2025 | 7:00 PM
-              </p>
+              <p className=" text-[1rem] font-roboto text-gray-300">📅 March 15, 2025 | 7:00 PM</p>
             </div>
-            <div className=" flex flex-col justify-center items-center gap-4 mt-3 overflow-scroll">
+            <div className="flex flex-col justify-center items-center gap-4 mt-3">
               <div className="flex justify-center">
                 <Image
                   src={profilePhoto || userDefault}
                   alt="profile"
                   width={150}
                   height={300}
-                  className="border border-[#24A0B5]"
+                  className="border-4 border-[#24A0B5]"
                 />
               </div>
               {storedData &&
                 storedData.map((item, index) => (
-                  <div key={index} className="p-4 rounded-lg border border-[#24A0B5] m-2">
-                    <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div key={index} className="p-4 rounded-lg border border-[#24A0B5] m-2 w-full">
+                    <div className="grid grid-cols-2 gap-4 text-sm ">
                       <div>
                         <label className="text-gray-400">Enter your name</label>
-                        <p className="font-medium">{item.full_name}</p>
+                        <p className="font-medium ">{item.full_name}</p>
                       </div>
                       <div>
                         <label className="text-gray-400">Enter your email</label>
-                        <p className="font-medium text-[]">{item.email}</p>
+                        <p className="font-medium text-xs">{item.email}</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-sm mt-3">
@@ -100,8 +99,8 @@ export default function ReadyComponent({ onBookAnotherTicket }) {
                 ))}
             </div>
           </div>
-          <div className="absolute bottom-8 left-0  flex flex-row justify-center w-full  ">
-            <Image src={barcode} alt="Barcode" width={320} height={40} />
+          <div className="absolute bottom-8 left-0 flex flex-row justify-center w-full">
+            <Image src={barcode || "/placeholder.svg"} alt="Barcode" width={200} height={40} />
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ export default function TicketSelection({
       </div>
       <div className="bg-gradient-to-r from-[#24A0B5]/10 to-[#24A0B5]/0 border
        border-[#0E464F] p-4 rounded-2xl mt-8 text-center font-jeju ">
-        <h2 className="md:text-[60px] font-roadRage">Techember Fest '25</h2>
+        <h2 className="md:text-[60px] text-[2.5rem] font-roadRage">Techember Fest '25</h2>
         <p className="text-gray-300 font-roboto text-[1rem] mx-auto max-w-[280px]">
           Join us for an unforgettable experience at [Event Name]! Secure your spot now.
         </p>
