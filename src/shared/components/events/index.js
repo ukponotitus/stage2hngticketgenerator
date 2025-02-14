@@ -113,7 +113,7 @@ export default function Events() {
       image: "",
     });
     setFile(null);
-    // localStorage.removeItem("  ");
+    localStorage.removeItem("  ");
   };
 
   const handleCancel = () => {
