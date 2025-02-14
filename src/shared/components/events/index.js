@@ -13,6 +13,7 @@ export default function Events() {
     numbers_of_tickets: "",
     ticketType: "",
     image: "",
+    avatar:"",
   });
   const [error, setError] = useState(null);
 
@@ -39,21 +40,22 @@ export default function Events() {
 
     if (type === "file" && files) {
       const file = files[0];
+      const preset_key= "upload_preset"
+      const cloudName= "dsrs1vq0n"
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "upload_preset");
-
+      formData.append("upload_preset", preset_key);
       try {
-        const response = await fetch("https://api.cloudinary.com/v1_1/your_cloud_name/image/upload", {
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
           method: "POST",
           body: formData,
         });
-
         const data = await response.json();
         setUserFormData((prevData) => ({
           ...prevData,
           [name]: data.secure_url,
         }));
+        console.log(data)
       } catch (error) {
         console.error("Error uploading image:", error);
       }
@@ -82,7 +84,6 @@ export default function Events() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
-
     try {
       if (typeof window !== "undefined") {
         const storedData = JSON.parse(localStorage.getItem("userformData") || "[]");
@@ -112,7 +113,7 @@ export default function Events() {
       image: "",
     });
     setFile(null);
-    localStorage.removeItem("profilePhoto");
+    // localStorage.removeItem("  ");
   };
 
   const handleCancel = () => {

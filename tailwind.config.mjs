@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        jeju: ["Jeju Myeongjo", "serif"],
+        roadRage: ["Road Rage", "cursive"],
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],
