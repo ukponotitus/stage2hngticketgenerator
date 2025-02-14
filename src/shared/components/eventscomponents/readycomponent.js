@@ -54,7 +54,8 @@ export default function ReadyComponent({ onBookAnotherTicket }) {
       <div className="relative mx-auto max-w-sm ">
         <div className="relative flex flex-col max-h-auto ">
           <Image src={ticket} alt="Background Ticket" className="w-full object-cover" />
-          <div className='absolute border border-[#24A0B5]  shadow-lg w-[90%] max-h-[400px]  sm:max-h-[500px] overflow-y-scroll mx-auto inset-x-4 mt-5 sm:mt-16 md:mt-16 text-white rounded-xl p-3'>
+          <div className='absolute border border-[#24A0B5]  shadow-lg w-[90%] max-h-[400px]  sm:max-h-[500px] 
+          mx-auto inset-x-4 mt-5 sm:mt-16 md:mt-16 text-white rounded-xl p-3'>
             <div className="w-full text-center">
               <h2 className="md:text-[40px] font-roadRage">Techember Fest '25</h2>
               <p className="mt-2 text-[1rem] font-roboto text-gray-300">📍 04 Rumens road, Ikoyi, Lagos </p>
